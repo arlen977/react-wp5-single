@@ -1,0 +1,31 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "plugins": [
+        "react-hooks"
+    ],
+    "parserOptions": { //解析器选项
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "rules": {
+        "indent": [
+            "off"
+        ],
+        "no-undef": "warn",
+        "no-unused-vars": "warn",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/display-name": "off",
+        "eqeqeq": [
+            "error",
+            "always"
+        ]
+    }
+}

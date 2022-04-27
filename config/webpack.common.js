@@ -1,3 +1,4 @@
+/* eslint-disable */
 // webpack 公共配置
 const path = require("path");
 const getCSSModuleLocalIdent = require("react-dev-utils/getCSSModuleLocalIdent");

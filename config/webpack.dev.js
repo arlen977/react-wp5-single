@@ -1,3 +1,4 @@
+/* eslint-disable */
 // webpack development 配置
 const {
     merge
@@ -6,6 +7,7 @@ const ip = require('ip');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin'); //node终端输出工具
 const common = require("./webpack.common.js");
 const portfinder = require('portfinder'); // 端口被占用 自动切换下一端口
+const ESLintPlugin = require('eslint-webpack-plugin');
 const devConfig = {
     mode: "development",
     target: 'web', // 需要设置web 否则HRM热更新无效
@@ -20,7 +22,11 @@ const devConfig = {
         name: 'development-cache', // 配置以name为隔离，创建不同的缓存文件，如生成PC或mobile不同的配置缓存
     },
     plugins: [
-       
+        new ESLintPlugin({
+            fix: true,
+            extensions: ['js', 'jsx', 'json', 'ts', 'tsx'],
+            exclude: '/node_modules/',
+        }),
     ],
     devServer: {
         port: 9527,
