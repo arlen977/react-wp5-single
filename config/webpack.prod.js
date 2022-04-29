@@ -6,6 +6,7 @@ const {
 const path = require("path")
 const common = require('./webpack.common.js');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const WebpackBar = require('webpackbar');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 const {
     WebpackManifestPlugin
@@ -28,6 +29,7 @@ module.exports = (env) => {
         },
         externals: externalModules, // 构建时忽略的资源
         plugins: [
+            new WebpackBar(),
             // 打包分析
             // new BundleAnalyzerPlugin(),
             // 去除 moment 多余语言包

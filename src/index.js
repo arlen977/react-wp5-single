@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-import App from "./pages/page1/App.jsx";
+import App from "./pages/frame/app/App";
+import "lib-flexible";
 
 ReactDOM.render(
     <React.StrictMode>

@@ -12,6 +12,7 @@
 /build
 /arlenweb
 /webapp
+/dist
 
 # misc
 .DS_Store

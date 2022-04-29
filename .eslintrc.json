@@ -7,6 +7,13 @@
     "plugins": [
         "react-hooks"
     ],
+    "env": {
+        "browser": true,
+        "node": true,
+        "jasmine": true,
+        "es6": true
+    },
+    "parser": "@babel/eslint-parser",
     "parserOptions": { //解析器选项
         "ecmaFeatures": {
             "jsx": true
@@ -23,6 +30,7 @@
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "react/display-name": "off",
+        "react/prop-types": 0, //防止在react组件定义中缺少props验证
         "eqeqeq": [
             "error",
             "always"
