@@ -4,7 +4,7 @@ import MyRoutes from "@/routes";
 import "./App.less";
 
 const App = () => {
-    const a;
+    const a
     a =b
     return (
         <HashRouter>
