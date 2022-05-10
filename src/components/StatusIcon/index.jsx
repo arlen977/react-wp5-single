@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.less";
 
-const Index = (props) => {
+const Index = props => {
     return (
         <div className="status_icon">
             <div className="dot" style={{ backgroundColor: props.color }}></div>

@@ -2,7 +2,7 @@ import React from "react";
 import { useRoutes } from "react-router-dom";
 
 // 懒加载
-const lazyLoad = (path) => {
+const lazyLoad = path => {
     const Comp = React.lazy(() => import(`@/pages/${path}`));
     return (
         <React.Suspense fallback={<>加载中...</>}>

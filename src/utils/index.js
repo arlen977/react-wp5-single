@@ -26,12 +26,12 @@ export function getQueryVariable(variable) {
  * @param {*} str
  * @param {*} queryStr
  * @param {*} pon
- * @return {*} 
+ * @return {*}
  */
- export function findPosition(str, queryStr, pon) {
-    var x = str.indexOf(queryStr)
+export function findPosition(str, queryStr, pon) {
+    var x = str.indexOf(queryStr);
     for (var i = 0; i < pon; i++) {
-      x = str.indexOf(queryStr, x + 1)
+        x = str.indexOf(queryStr, x + 1);
     }
-    return x
-  }
+    return x;
+}

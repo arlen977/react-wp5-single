@@ -44,16 +44,8 @@ const IOPSChart = () => {
                     <div className="desc_list">
                         <div className="desc_label">单位:</div>
                         <div className="desc_value">硬盘IOPS</div>
-                        <StatusIcon
-                            color={"#0081CC"}
-                            textColor={"#697886"}
-                            text={"读"}
-                        ></StatusIcon>
-                        <StatusIcon
-                            color={"#1B9962"}
-                            textColor={"#697886"}
-                            text={"写"}
-                        ></StatusIcon>
+                        <StatusIcon color={"#0081CC"} textColor={"#697886"} text={"读"}></StatusIcon>
+                        <StatusIcon color={"#1B9962"} textColor={"#697886"} text={"写"}></StatusIcon>
                     </div>
                     <div className="desc_list">
                         <div className="desc_label">间隔:</div>
@@ -61,17 +53,10 @@ const IOPSChart = () => {
                     </div>
                 </div>
                 <div className="chart_switch">
-                    <Switch
-                        className="chart_switch"
-                        checkedChildren="开启"
-                        unCheckedChildren="关闭"
-                    />
+                    <Switch className="chart_switch" checkedChildren="开启" unCheckedChildren="关闭" />
                 </div>
             </div>
-            <Echart
-                options={options}
-                style={{ width: "606px", height: "224px" }}
-            ></Echart>
+            <Echart options={options} style={{ width: "606px", height: "224px" }}></Echart>
         </div>
     );
 };

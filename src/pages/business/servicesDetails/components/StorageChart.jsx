@@ -40,11 +40,7 @@ const CPUChart = () => {
                     <div className="desc_list">
                         <div className="desc_label">单位:</div>
                         <div className="desc_value">%</div>
-                        <StatusIcon
-                            color={"#0081CC"}
-                            textColor={"#697886"}
-                            text={"内存"}
-                        ></StatusIcon>
+                        <StatusIcon color={"#0081CC"} textColor={"#697886"} text={"内存"}></StatusIcon>
                     </div>
                     <div className="desc_list">
                         <div className="desc_label">间隔:</div>
@@ -52,17 +48,10 @@ const CPUChart = () => {
                     </div>
                 </div>
                 <div className="chart_switch">
-                    <Switch
-                        className="chart_switch"
-                        checkedChildren="开启"
-                        unCheckedChildren="关闭"
-                    />
+                    <Switch className="chart_switch" checkedChildren="开启" unCheckedChildren="关闭" />
                 </div>
             </div>
-            <Echart
-                options={options}
-                style={{ width: "606px", height: "224px" }}
-            ></Echart>
+            <Echart options={options} style={{ width: "606px", height: "224px" }}></Echart>
         </div>
     );
 };

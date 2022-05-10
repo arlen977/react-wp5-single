@@ -16,7 +16,7 @@ const Login = observer(() => {
         setTimeout(() => {
             navigate("/dashboard");
         }, 1000);
-        USER_LOGIN().then((res) => {
+        USER_LOGIN().then(res => {
             console.log(res);
         });
     };

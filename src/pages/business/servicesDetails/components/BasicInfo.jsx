@@ -34,11 +34,7 @@ const Index = () => {
             <div className="values">
                 <div className="label">状态</div>
                 <div className="value">
-                    <StatusIcon
-                        color={"#0081CC"}
-                        textColor={"#0081CC"}
-                        text={"运行中"}
-                    ></StatusIcon>
+                    <StatusIcon color={"#0081CC"} textColor={"#0081CC"} text={"运行中"}></StatusIcon>
                 </div>
             </div>
             <div className="values">

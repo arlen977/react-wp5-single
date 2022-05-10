@@ -19,9 +19,9 @@ const service = axios.create({
 
 // request 拦截器
 service.interceptors.request.use(
-    (config) => {
+    config => {
         // 配置当前的cancelToken 保存cancel
-        config.cancelToken = new CancelToken((c) => {
+        config.cancelToken = new CancelToken(c => {
             window.axiosCancel = c;
         });
 
@@ -31,15 +31,11 @@ service.interceptors.request.use(
             config.headers["authorizationToken"] = userInfo.authorizationToken;
         }
 
-        console.log(
-            `%c接口 ${config.url} 请求数据：`,
-            "color:#8cdcfe;font-size:13px;",
-            config.data
-        ); // 方便调试查看
+        console.log(`%c接口 ${config.url} 请求数据：`, "color:#8cdcfe;font-size:13px;", config.data); // 方便调试查看
 
         return config;
     },
-    (error) => {
+    error => {
         antMsg.error("请求失败，请刷新重试！");
         //  这里处理一些请求出错的情况
         Promise.reject(error);
@@ -48,17 +44,13 @@ service.interceptors.request.use(
 
 // response 拦截器
 service.interceptors.response.use(
-    (response) => {
+    response => {
         window.axiosCancel = null;
 
         let resetData = response.data;
 
         const urlName = response.config.url;
-        console.log(
-            `%c接口 ${urlName} 返回数据：`,
-            "color:#00be00;font-size:13px;",
-            resetData
-        ); // 方便调试查看
+        console.log(`%c接口 ${urlName} 返回数据：`, "color:#00be00;font-size:13px;", resetData); // 方便调试查看
 
         // 这里处理一些response 正常放回时的逻辑  全局拦截返回状态
         switch (resetData.code) {
@@ -79,17 +71,14 @@ service.interceptors.response.use(
                 return Promise.reject(resetData);
         }
     },
-    (error) => {
+    error => {
         // 中断链接
         if (axios.isCancel(error)) {
             return Promise.reject(error);
         }
         // 这里处理一些response 出错时的逻辑
         //  1.判断请求超时
-        if (
-            error.code === "ECONNABORTED" &&
-            error.message.indexOf("timeout") !== -1
-        ) {
+        if (error.code === "ECONNABORTED" && error.message.indexOf("timeout") !== -1) {
             antMsg.error("请求超时，请刷新重试！");
         } else if (error.message.indexOf("500") !== -1) {
             antMsg.error("服务器错误，请刷新重试！");

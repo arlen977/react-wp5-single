@@ -12,7 +12,7 @@ echarts.use([GridComponent, LineChart, CanvasRenderer, UniversalTransition]);
  *
  * @return {*}
  */
-const Echart = (props) => {
+const Echart = props => {
     const { options, style } = props;
     const chartRef = useRef();
     const myChart = useRef();

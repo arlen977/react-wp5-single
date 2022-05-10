@@ -38,24 +38,14 @@ const PPSChart = () => {
 
     return (
         <div className="chart_list chart_left">
-            <div className="chart_title">
-                VXNET-D5CK1RO / IF-PPS- -52:54:11:5D:A0:46
-            </div>
+            <div className="chart_title">VXNET-D5CK1RO / IF-PPS- -52:54:11:5D:A0:46</div>
             <div className="chart_desc">
                 <div className="desc_left">
                     <div className="desc_list">
                         <div className="desc_label">单位:</div>
                         <div className="desc_value">pps</div>
-                        <StatusIcon
-                            color={"#0081CC"}
-                            textColor={"#697886"}
-                            text={"进"}
-                        ></StatusIcon>
-                        <StatusIcon
-                            color={"#1B9962"}
-                            textColor={"#697886"}
-                            text={"出"}
-                        ></StatusIcon>
+                        <StatusIcon color={"#0081CC"} textColor={"#697886"} text={"进"}></StatusIcon>
+                        <StatusIcon color={"#1B9962"} textColor={"#697886"} text={"出"}></StatusIcon>
                     </div>
                     <div className="desc_list">
                         <div className="desc_label">间隔:</div>
@@ -63,17 +53,10 @@ const PPSChart = () => {
                     </div>
                 </div>
                 <div className="chart_switch">
-                    <Switch
-                        className="chart_switch"
-                        checkedChildren="开启"
-                        unCheckedChildren="关闭"
-                    />
+                    <Switch className="chart_switch" checkedChildren="开启" unCheckedChildren="关闭" />
                 </div>
             </div>
-            <Echart
-                options={options}
-                style={{ width: "606px", height: "224px" }}
-            ></Echart>
+            <Echart options={options} style={{ width: "606px", height: "224px" }}></Echart>
         </div>
     );
 };

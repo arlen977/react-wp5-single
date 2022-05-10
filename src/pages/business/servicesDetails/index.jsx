@@ -15,7 +15,7 @@ import PPSChart from "./components/PPSChart";
 import "./index.less";
 
 export default () => {
-    const handleSizeChange = (e) => {
+    const handleSizeChange = e => {
         console.log(e);
     };
     const menu = (
@@ -50,11 +50,7 @@ export default () => {
             </div>
             <div className="list_right">
                 <div className="tool_btn">
-                    <Radio.Group
-                        onChange={handleSizeChange}
-                        optionType="button"
-                        buttonStyle="solid"
-                    >
+                    <Radio.Group onChange={handleSizeChange} optionType="button" buttonStyle="solid">
                         <Radio.Button value="a">最近6小时</Radio.Button>
                         <Radio.Button value="b">最近一天</Radio.Button>
                         <Radio.Button value="c">最近两周</Radio.Button>
@@ -76,11 +72,7 @@ export default () => {
                 <div className="line"></div>
                 <div className="camera_box">
                     <div className="camera_btn_tool">
-                        <Radio.Group
-                            onChange={handleSizeChange}
-                            optionType="button"
-                            buttonStyle="solid"
-                        >
+                        <Radio.Group onChange={handleSizeChange} optionType="button" buttonStyle="solid">
                             <Radio.Button value="c">最逻辑盘监控</Radio.Button>
                             <Radio.Button value="d">物理盘监控</Radio.Button>
                         </Radio.Group>
@@ -107,9 +99,7 @@ export default () => {
                     <DevourChart></DevourChart>
                 </div>
                 <div className="line"></div>
-                <div className="tip">
-                    提示:开启网卡多队列服务，可以提升网卡pps能力。怎样开启网卡多队列?
-                </div>
+                <div className="tip">提示:开启网卡多队列服务，可以提升网卡pps能力。怎样开启网卡多队列?</div>
                 <div className="chart_box">
                     <BPSChart></BPSChart>
                     <PPSChart></PPSChart>

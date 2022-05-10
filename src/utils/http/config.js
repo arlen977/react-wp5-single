@@ -2,18 +2,15 @@
 const modeUrlObj = {
     // 开发环境
     development: {
-        baseURL:
-            "https://mock.mengxuegu.com/mock/626b53c81e3d7470073a2207/example",
+        baseURL: "https://mock.mengxuegu.com/mock/626b53c81e3d7470073a2207/example",
     },
     // 准生产环境
     standard: {
-        baseURL:
-            "https://mock.mengxuegu.com/mock/626b53c81e3d7470073a2207/example",
+        baseURL: "https://mock.mengxuegu.com/mock/626b53c81e3d7470073a2207/example",
     },
     // 生产环境
     production: {
-        baseURL:
-            "https://mock.mengxuegu.com/mock/626b53c81e3d7470073a2207/example",
+        baseURL: "https://mock.mengxuegu.com/mock/626b53c81e3d7470073a2207/example",
     },
 };
 

@@ -45,9 +45,7 @@ class Storage {
             return true;
         }
 
-        return (
-            timestamp + expires * 24 * 3600 * 1000 - new Date().getTime() < 0
-        );
+        return timestamp + expires * 24 * 3600 * 1000 - new Date().getTime() < 0;
     }
 
     // 是否只读取一次
@@ -108,9 +106,7 @@ class Storage {
         localStorage.setItem(_key, _data);
     }
     reduxStorage(key, type = {}) {
-        return this.get(key) !== undefined && this.get(key) !== null
-            ? this.get(key)
-            : type;
+        return this.get(key) !== undefined && this.get(key) !== null ? this.get(key) : type;
     }
     // sessionStorage
     getS(key) {
@@ -124,16 +120,14 @@ class Storage {
     }
 
     reduxStorageS(key, type = {}) {
-        return this.getS(key) !== undefined && this.getS(key) !== null
-            ? this.getS(key)
-            : type;
+        return this.getS(key) !== undefined && this.getS(key) !== null ? this.getS(key) : type;
     }
     // 清除所有localStorage  retains 需要保留的值数组
     clear(retains = []) {
         // 取出需要保留的值
         const retainsObj = {};
         if (retains.length > 0) {
-            retains.map((item) => {
+            retains.map(item => {
                 retainsObj[item] = this.get(item);
                 return item;
             });
@@ -144,7 +138,7 @@ class Storage {
 
         // 重新赋值
         if (retains.length > 0) {
-            Object.keys(retainsObj).forEach((key) => {
+            Object.keys(retainsObj).forEach(key => {
                 this.set(key, retainsObj[key]);
             });
         }
@@ -154,7 +148,7 @@ class Storage {
         // 取出需要保留的值
         const retainsObj = {};
         if (retains.length > 0) {
-            retains.map((item) => {
+            retains.map(item => {
                 retainsObj[item] = this.get(item);
                 return item;
             });
@@ -165,7 +159,7 @@ class Storage {
 
         // 重新赋值
         if (retains.length > 0) {
-            Object.keys(retainsObj).forEach((key) => {
+            Object.keys(retainsObj).forEach(key => {
                 this.set(key, retainsObj[key]);
             });
         }
