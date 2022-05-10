@@ -18,3 +18,20 @@ export function getQueryVariable(variable) {
     }
     return false;
 }
+
+/**
+ *获取某个字符出现的位置
+ *
+ * @export
+ * @param {*} str
+ * @param {*} queryStr
+ * @param {*} pon
+ * @return {*} 
+ */
+ export function findPosition(str, queryStr, pon) {
+    var x = str.indexOf(queryStr)
+    for (var i = 0; i < pon; i++) {
+      x = str.indexOf(queryStr, x + 1)
+    }
+    return x
+  }

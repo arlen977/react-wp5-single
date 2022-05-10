@@ -202,7 +202,11 @@ module.exports = (env) => {
                 )
             },
             {
-                test: /\.(jpe?g|png|gif|svg|woff|woff2|eot|ttf|otf)$/i,
+                test: /\.svg$/,
+                use: ['@svgr/webpack'],
+            },
+            {
+                test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|otf)$/i,
                 type: "asset/resource",
             },
             ]

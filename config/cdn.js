@@ -32,7 +32,7 @@ const prodCdn = [{
 // 最终 cdn 配置
 exports.externalConfig = [
     ...devToolsCdn,
-    ...prodCdn
+    // ...prodCdn
 
 ]
 
