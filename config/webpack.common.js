@@ -209,7 +209,27 @@ module.exports = (env) => {
                 test: /\.svg$/,
                 use: [
                     { loader: 'svg-sprite-loader', options: {} },
-                    { loader: 'svgo-loader', options: {} },
+                    { loader: 'svgo-loader', options: {
+                        plugins: [
+                            {
+                                name: 'removeAttrs',
+                                params: {
+                                    attrs: '(stroke)'
+                                }
+                            },
+                            {
+                                name: "removeAttributesBySelector",
+                                params: {
+                                    selectors: [
+                                        // 找到对应的值 删除
+                                        { selector: "[fill = 'none']", attributes: 'fill' },
+                                        { selector: "[fill = '#B6C2CD']", attributes: 'fill' },
+                                    ]
+                                }
+                            }
+
+                        ]
+                    } },
                 ],
                 resourceQuery: { not: [/url/] },
 
