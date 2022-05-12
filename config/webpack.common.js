@@ -226,7 +226,20 @@ module.exports = (env) => {
                                         { selector: "[fill = '#B6C2CD']", attributes: 'fill' },
                                     ]
                                 }
-                            }
+                            },
+                            // 自定义插件
+                            {
+                                name: 'customPluginName',
+                                type: 'perItem', // 'perItem', 'perItemReverse' or 'full'
+                                params: {
+                                  optionName: '#324558',
+                                },
+                                fn: (ast, params, info) => {
+                                    if(ast?.attributes?.fill === "#324558"){
+                                        ast.attributes.fill = "currentColor"
+                                    }
+                                },
+                              },
 
                         ]
                     } },
