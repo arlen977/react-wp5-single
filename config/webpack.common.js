@@ -33,7 +33,7 @@ module.exports = (env) => {
 
 
     // 根据环境区分加载对应样式loader
-     const getStyleLoaders = (cssOptions, preProcessor, more = []) => {
+    const getStyleLoaders = (cssOptions, preProcessor, more = []) => {
         const loaders = [
             isEnvDevelopment && require.resolve('style-loader'), //style-loader与MiniCssExtractPlugin冲突，所以需要区分加载
             isEnvProduction && {
@@ -45,7 +45,6 @@ module.exports = (env) => {
             },
             {
                 loader: require.resolve('postcss-loader'),
-
             },
 
         ].filter(Boolean);
@@ -69,7 +68,7 @@ module.exports = (env) => {
             }),
             // 生成 index.html
             new HtmlWebpackPlugin({
-                template: path.join(__dirname, "..",`public/index.html`),
+                template: path.join(__dirname, "..", `public/index.html`),
                 filename: `index.html`,
                 cdnConfig: [],
                 // onlyCss: false, //加载css
@@ -168,12 +167,12 @@ module.exports = (env) => {
                         {
                             loader: 'sass-resources-loader',
                             options: {
-                              resources: [
-                                // 这里按照你的公共变量文件路径填写 使用公共sass less变量
-                                path.resolve(__dirname, '../src/assets/css/theme.less')
-                              ]
+                                resources: [
+                                    // 这里按照你的公共变量文件路径填写 使用公共sass less变量
+                                    path.resolve(__dirname, '../src/assets/css/theme.less')
+                                ]
                             }
-                          }
+                        }
                     ]),
                 sideEffects: true,
             },
@@ -204,11 +203,22 @@ module.exports = (env) => {
             {
                 test: /\.svg$/,
                 use: ['@svgr/webpack'],
+                resourceQuery: /url/, // *.svg?url
+            },
+            {
+                test: /\.svg$/,
+                use: [
+                    { loader: 'svg-sprite-loader', options: {} },
+                    { loader: 'svgo-loader', options: {} },
+                ],
+                resourceQuery: { not: [/url/] },
+
             },
             {
                 test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|otf)$/i,
                 type: "asset/resource",
             },
+
             ]
         },
     }
